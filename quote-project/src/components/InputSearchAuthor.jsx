@@ -8,7 +8,6 @@ export default function InputSearchAuthor({ setAuthor }) {
   const [inputValue, setInputValue] = useState("");
   async function handleSubmitAuthorName(e) {
     e.preventDefault();
-    console.log(inputValue);
     setAuthor(() => {
       return inputValue;
     });
@@ -16,6 +15,7 @@ export default function InputSearchAuthor({ setAuthor }) {
   }
   return (
     <Box
+      role="form"
       component="form"
       onSubmit={handleSubmitAuthorName}
       flexWrap={"nowrap"}

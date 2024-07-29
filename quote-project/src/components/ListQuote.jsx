@@ -8,7 +8,6 @@ import Typography from "@mui/material/Typography";
 import { Box } from "@mui/material";
 import LikeIcon from "./LikeIcon";
 export default function ListQuote({ isShow, data }) {
-  console.log(data);
   return (
     <List
       sx={{
@@ -19,8 +18,8 @@ export default function ListQuote({ isShow, data }) {
     >
       {data.map((quote, i) => {
         return (
-          <>
-            <ListItem key={i} alignItems="flex-start">
+          <Box key={i} data-testid="box-quote">
+            <ListItem  alignItems="flex-start">
               <ListItemText
                 sx={{ borderLeft: "4px solid black", borderRadius: 1, pl: 2 }}
                 secondary={
@@ -45,7 +44,7 @@ export default function ListQuote({ isShow, data }) {
                         variant="h6"
                         sx={{ fontWeight: "bold", fontStyle: "italic" }}
                       >
-                        {`"${quote.quote}"`}
+                        {`${quote.quote}`}
                       </Typography>
 
                       <LikeIcon />
@@ -55,7 +54,7 @@ export default function ListQuote({ isShow, data }) {
               />
             </ListItem>
             <Divider variant="inset" component="li" />
-          </>
+          </Box>
         );
       })}
     </List>

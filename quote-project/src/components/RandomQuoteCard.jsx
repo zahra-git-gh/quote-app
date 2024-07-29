@@ -1,11 +1,22 @@
 import { CardContent, Card, Container } from "@mui/material";
+const apikey = "cc0dc3dbe2mshaa28c7991a84973p1eb95ejsnd012ae315685";
 import Typography from "@mui/material/Typography";
 import { useEffect, useState } from "react";
-
 export default function RandomQuotCard() {
-  const apikey = import.meta.env.VITE_API_KEY;
   const [quote, setQuote] = useState("");
-  console.log(apikey);
+  function today() {
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    let mm = today.getMonth() + 1; // Months start at 0!
+    let dd = today.getDate();
+
+    if (dd < 10) dd = "0" + dd;
+    if (mm < 10) mm = "0" + mm;
+
+    const formattedToday = dd + "/" + mm + "/" + yyyy;
+    return formattedToday;
+  }
+
   useEffect(() => {
     fetch("https://get-quotes-api.p.rapidapi.com/random", {
       headers: {
@@ -16,7 +27,7 @@ export default function RandomQuotCard() {
         return res.json();
       })
       .then((data) => {
-        setQuote(data.quote.quote);
+        setQuote(data.quote);
       });
   }, []);
 
@@ -41,22 +52,32 @@ export default function RandomQuotCard() {
             Quote of the Day
           </Typography>
           <Typography color={"#021024"} align="center">
-            Jul 28, 2024
+            {today()}
           </Typography>
-          <Typography
-            mt={1}
-            align="center"
-            sx={{ fontStyle: "italic" }}
-            variant="h5"
-            component="div"
-            color={"#052659"}
-          >
-            {`"${quote}"`}
-          </Typography>
-
-          <Typography color={"#052659"} align="center" mt={2} variant="body2">
-            {"John Lennon"}
-          </Typography>
+          {quote && (
+            <Typography
+              data-testid="quote-paragraph"
+              mt={1}
+              align="center"
+              sx={{ fontStyle: "italic" }}
+              variant="h5"
+              component="div"
+              color={"#052659"}
+            >
+              {`${quote.quote}`}
+            </Typography>
+          )}
+          {quote && (
+            <Typography
+              data-testid="author-paragraph"
+              color={"#052659"}
+              align="center"
+              mt={2}
+              variant="body2"
+            >
+              {quote ? quote.author : ""}
+            </Typography>
+          )}
         </CardContent>
       </Card>
     </Container>

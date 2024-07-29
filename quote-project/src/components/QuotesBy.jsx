@@ -1,6 +1,6 @@
 import { Typography } from "@mui/material";
 
-export function QuotesBy({ isShow, author }) {
+export default function QuotesBy({ isShow, author }) {
   return (
     <Typography
       mt={1}

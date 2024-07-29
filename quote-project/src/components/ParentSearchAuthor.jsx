@@ -1,12 +1,12 @@
 import { Container } from "@mui/material";
 import InputSearchAuthor from "./InputSearchAuthor";
 import ListQuote from "./ListQuote";
-import { QuotesBy } from "./QuotesBy";
+import QuotesBy from "./QuotesBy";
 import NotFoundAuthor from "./NotFoundAuthor";
 import { useEffect, useState } from "react";
 
 export default function ParentSearchAuthor() {
-  const apikey = import.meta.env.VITE_API_KEY;
+  const apikey = "cc0dc3dbe2mshaa28c7991a84973p1eb95ejsnd012ae315685";
   const [author, setAuthor] = useState("");
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
