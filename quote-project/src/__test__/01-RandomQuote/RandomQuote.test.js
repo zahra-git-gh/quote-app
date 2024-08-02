@@ -1,7 +1,7 @@
 import {screen, render} from '@testing-library/react';
-import RandomQuotCard from '../components/RandomQuoteCard';
+import RandomQuotCard from '../../components/RandomQuoteCard';
 import fetchMock from "jest-fetch-mock";
-import data from '../randomQuoteData.json';
+import data from '../../randomQuoteData.json';
 fetchMock.enableMocks()
 describe("test RandomQuoteCard component", ()=>{
     beforeEach(()=>{fetch.resetMocks()});

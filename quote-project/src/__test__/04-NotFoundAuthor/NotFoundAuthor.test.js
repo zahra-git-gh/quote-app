@@ -1,5 +1,5 @@
 import {render, screen} from '@testing-library/react';
-import NotFoundAuthor from '../components/NotFoundAuthor';
+import NotFoundAuthor from '../../components/NotFoundAuthor';
 import '@testing-library/jest-dom'
 describe("test NotFoundAuthor component", ()=>{
     test("when isShow is true paragraph show in component",()=>{

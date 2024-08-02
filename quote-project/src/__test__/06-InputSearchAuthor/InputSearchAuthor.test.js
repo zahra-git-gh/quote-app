@@ -1,5 +1,5 @@
 import {render, fireEvent, screen} from '@testing-library/react';
-import InputSearchAuthor from '../components/InputSearchAuthor';
+import InputSearchAuthor from '../../components/InputSearchAuthor';
 const mockFunction=jest.fn()
 describe("test component inputSearchAuthor", ()=>{
     test("when form submit mockFunction should call once", ()=>{

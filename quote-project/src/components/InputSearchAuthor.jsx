@@ -13,6 +13,13 @@ export default function InputSearchAuthor({ setAuthor }) {
     });
     setInputValue("");
   }
+
+  function enter(e) {
+    if (e.keyCode === 13) {
+      document.getElementById("myBtn").click();
+    }
+  }
+
   return (
     <Box
       role="form"
@@ -29,6 +36,7 @@ export default function InputSearchAuthor({ setAuthor }) {
       <div>
         <FormGroup row sx={{ flexWrap: "nowrap", alignItems: "end" }}>
           <TextField
+            onKeyUp={enter}
             value={inputValue}
             id="standard-textarea"
             label="Author Name"
@@ -39,6 +47,7 @@ export default function InputSearchAuthor({ setAuthor }) {
             onChange={(e) => setInputValue(e.target.value)}
           />
           <Button
+            id="myBtn"
             type="submit"
             size="small"
             sx={{
