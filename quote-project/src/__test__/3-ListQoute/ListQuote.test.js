@@ -1,5 +1,5 @@
 import {render, screen} from '@testing-library/react';
-import ListQuote from '../components/ListQuote';
+import ListQuote from '../../components/ListQuote';
 
 const data2=[
     {

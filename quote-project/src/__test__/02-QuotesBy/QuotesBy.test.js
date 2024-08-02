@@ -1,5 +1,5 @@
 import {render, screen} from '@testing-library/react';
-import QuotesBy from '../components/QuotesBy';
+import QuotesBy from '../../components/QuotesBy';
 
 
 describe("test component QuotesBy", ()=>{

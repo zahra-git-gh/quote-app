@@ -1,5 +1,5 @@
 import {fireEvent, render, screen} from '@testing-library/react';
-import LikeIcon from '../components/LikeIcon';
+import LikeIcon from '../../components/LikeIcon';
 import '@testing-library/jest-dom'
 
 describe("test LikeIcon component", ()=>{
